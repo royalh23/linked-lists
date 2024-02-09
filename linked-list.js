@@ -34,4 +34,17 @@ class LinkedList {
   head() {
     return this.headNode;
   }
+
+  tail() {
+    if (this.headNode === null) return null;
+    let temp = this.headNode;
+    while (temp.next !== null) {
+      temp = temp.next;
+    }
+    return temp;
+  }
 }
+
+// const ll = new LinkedList();
+// ll.append(1);
+// console.log(ll.tail());
