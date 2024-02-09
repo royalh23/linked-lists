@@ -2,15 +2,12 @@ import Node from './node.js';
 
 class LinkedList {
   constructor() {
-    // Instanstiate the new list with a default HEAD node
     this.head = null;
   }
 
   append(value) {
     if (this.head === null) this.prepend(value);
     else {
-      // if HEAD is not null, traverse through the list and add the new node to
-      // the end
       let temp = this.head;
       while (temp.next !== null) {
         temp = temp.next;
@@ -21,5 +18,16 @@ class LinkedList {
 
   prepend(value) {
     this.head = new Node(value, this.head);
+  }
+
+  size() {
+    if (this.head === null) return 0;
+    let count = 0;
+    let temp = this.head;
+    while (temp !== null) {
+      count += 1;
+      temp = temp.next;
+    }
+    return count;
   }
 }
