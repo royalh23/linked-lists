@@ -43,8 +43,24 @@ class LinkedList {
     }
     return temp;
   }
+
+  at(index) {
+    let count = 0;
+    let temp = this.headNode;
+    while (count < index) {
+      if (temp === null) return null;
+      count += 1;
+      temp = temp.next;
+    }
+    return temp;
+  }
 }
 
 // const ll = new LinkedList();
 // ll.append(1);
-// console.log(ll.tail());
+// ll.append(2);
+// ll.append(3);
+// ll.append(4);
+// ll.append(5);
+// console.log(ll);
+// console.log(ll.at(4));
