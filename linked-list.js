@@ -90,4 +90,16 @@ class LinkedList {
     }
     return null;
   }
+
+  toString() {
+    if (this.headNode === null) return null;
+    let str = '';
+    let temp = this.headNode;
+    while (temp !== null) {
+      str += `( ${temp.value} ) -> `;
+      temp = temp.next;
+    }
+    str += `${temp}`;
+    return str;
+  }
 }
