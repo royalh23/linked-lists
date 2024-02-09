@@ -78,4 +78,16 @@ class LinkedList {
     }
     return false;
   }
+
+  find(value) {
+    if (this.headNode === null) return null;
+    let count = 0;
+    let temp = this.headNode;
+    while (temp !== null) {
+      if (temp.value === value) return count;
+      count += 1;
+      temp = temp.next;
+    }
+    return null;
+  }
 }
