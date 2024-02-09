@@ -54,13 +54,18 @@ class LinkedList {
     }
     return temp;
   }
-}
 
-// const ll = new LinkedList();
-// ll.append(1);
-// ll.append(2);
-// ll.append(3);
-// ll.append(4);
-// ll.append(5);
-// console.log(ll);
-// console.log(ll.at(4));
+  pop() {
+    if (this.headNode === null) console.log('Cannot delete the head node!');
+    else if (this.size() === 1) this.headNode = null;
+    else {
+      let cur = this.headNode;
+      let prev = null;
+      while (cur.next !== null) {
+        prev = cur;
+        cur = cur.next;
+      }
+      prev.next = null;
+    }
+  }
+}
