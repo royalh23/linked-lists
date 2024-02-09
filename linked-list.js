@@ -68,4 +68,14 @@ class LinkedList {
       prev.next = null;
     }
   }
+
+  contains(value) {
+    if (this.headNode === null) return false;
+    let temp = this.headNode;
+    while (temp !== null) {
+      if (temp.value === value) return true;
+      temp = temp.next;
+    }
+    return false;
+  }
 }
