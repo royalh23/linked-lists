@@ -2,13 +2,13 @@ import Node from './node.js';
 
 class LinkedList {
   constructor() {
-    this.head = null;
+    this.headNode = null;
   }
 
   append(value) {
-    if (this.head === null) this.prepend(value);
+    if (this.headNode === null) this.prepend(value);
     else {
-      let temp = this.head;
+      let temp = this.headNode;
       while (temp.next !== null) {
         temp = temp.next;
       }
@@ -17,17 +17,21 @@ class LinkedList {
   }
 
   prepend(value) {
-    this.head = new Node(value, this.head);
+    this.headNode = new Node(value, this.headNode);
   }
 
   size() {
-    if (this.head === null) return 0;
+    if (this.headNode === null) return 0;
     let count = 0;
-    let temp = this.head;
+    let temp = this.headNode;
     while (temp !== null) {
       count += 1;
       temp = temp.next;
     }
     return count;
+  }
+
+  head() {
+    return this.headNode;
   }
 }
