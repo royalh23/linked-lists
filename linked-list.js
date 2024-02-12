@@ -8,11 +8,7 @@ class LinkedList {
   append(value) {
     if (this.headNode === null) this.prepend(value);
     else {
-      let temp = this.headNode;
-      while (temp.next !== null) {
-        temp = temp.next;
-      }
-      temp.next = new Node(value);
+      this.tail().next = new Node(value);
     }
   }
 
